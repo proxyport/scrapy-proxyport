@@ -17,4 +17,5 @@ DOWNLOADER_MIDDLEWARES = {
 }
 DOWNLOAD_TIMEOUT = 10
 RETRY_TIMES = 20
+DUPEFILTER_CLASS = 'scrapy.dupefilters.BaseDupeFilter'
 ```
