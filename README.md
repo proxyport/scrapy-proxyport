@@ -15,4 +15,6 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapyproxyport.middlewares.ProxyMiddleware': 898,
     'scrapy.downloadermiddlewares.cookies.CookiesMiddleware': 899,
 }
+DOWNLOAD_TIMEOUT = 10
+RETRY_TIMES = 20
 ```
