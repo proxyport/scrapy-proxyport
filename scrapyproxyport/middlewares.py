@@ -1,9 +1,10 @@
 from datetime import datetime, timedelta
 import logging
 
-from proxyport import get_random_proxy
-
+from proxyport import get_random_proxy, set_user_agent
 from scrapy.exceptions import IgnoreRequest
+
+from .__version__ import __version__
 
 
 logger = logging.getLogger(__name__)
@@ -15,6 +16,7 @@ class ProxyMiddleware(object):
         return cls(crawler.settings)
 
     def __init__(self, settings):
+        set_user_agent('scrapyproxyport/{}'.format(__version__))
         self.max_retry_times = settings.get('RETRY_TIMES', 20)
         self.max_times_use = settings.get('MAX_TIMES_USE_PROXY', 50)
         self.bad_proxies = dict()

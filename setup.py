@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 here = os.path.abspath(os.path.dirname(__file__))
 
 NAME = 'scrapyproxyport'
-DESCRIPTION = 'Proxy Port integration with Scrapy framework.'
+DESCRIPTION = 'Proxy Port integration for Scrapy.'
 URL = 'https://github.com/proxyport/scrapy-proxyport'
 EMAIL = 'proxyportcom@gmail.com'
 AUTHOR = 'Proxy Port'

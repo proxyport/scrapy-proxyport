@@ -1,4 +1,4 @@
-[Proxy Port](https://github.com/proxyport/py-proxyport) integration with Scrapy framework.
+[Proxy Port](https://github.com/proxyport/py-proxyport) integration for Scrapy.
 
 ## Installation
 
