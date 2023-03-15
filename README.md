@@ -28,3 +28,6 @@ DOWNLOAD_TIMEOUT = 10
 RETRY_TIMES = 20
 DUPEFILTER_CLASS = 'scrapy.dupefilters.BaseDupeFilter'
 ```
+
+## Example Scrapy project
+[scrapy-proxyport-example](https://github.com/proxyport/scrapy-proxyport-example)
