@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scrapyproxyport"
+authors = [
+  { name="Proxy Port", email="proxyportcom@gmail.com" },
+]
+license = {file = "LICENSE"}
+description = "Proxy Port Scrapy middleware"
+requires-python = ">=3.6"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 5 - Production/Stable",
+    "Operating System :: OS Independent",
+    "Framework :: Scrapy",
+    "Topic :: Internet :: Proxy Servers",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy"
+]
+dependencies = ["proxyport2"]
+dynamic = ["version", "readme"]
+
+[project.urls]
+"Homepage" = "https://github.com/proxyport/scrapy-proxyport"
+"Bug Tracker" = "https://github.com/proxyport/scrapy-proxyport/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "scrapyproxyport.__version__"}
+readme = {file = ["README.md"], content-type = "text/markdown"}

@@ -1,7 +1,8 @@
 from datetime import datetime, timedelta
 import logging
+import os
 
-from proxyport import get_random_proxy, set_user_agent
+from proxyport2 import get_proxy, set_user_agent, set_api_key
 from scrapy.exceptions import IgnoreRequest
 
 from .__version__ import __version__
@@ -10,12 +11,26 @@ from .__version__ import __version__
 logger = logging.getLogger(__name__)
 
 
+class ProxyPortAuthorizationError(Exception):
+    pass
+
+
 class ProxyMiddleware(object):
     @classmethod
     def from_crawler(cls, crawler):
         return cls(crawler.settings)
 
     def __init__(self, settings):
+        proxyport_api_key = settings.get('PROXY_PORT_API_KEY')
+        if not proxyport_api_key:
+            proxyport_api_key = os.environ.get('PROXY_PORT_API_KEY')
+        if not proxyport_api_key:
+            raise ProxyPortAuthorizationError(
+                '\nPROXY_PORT_API_KEY are not specified'
+                '\nGet API Key at https://account.proxy-port.com/scraping'
+                '\nThen add it to settings.py'
+            )
+        set_api_key(proxyport_api_key)
         set_user_agent('scrapyproxyport/{}'.format(__version__))
         self.max_retry_times = settings.get('RETRY_TIMES', 20)
         self.max_times_use = settings.get('MAX_TIMES_USE_PROXY', 50)
@@ -76,11 +91,11 @@ class ProxyMiddleware(object):
 
     def get_proxy(self):
         self.bad_proxies_gc()
-        proxy = get_random_proxy()
+        proxy = get_proxy()
         tries = 0
         while self.bad_proxies.get(proxy) and tries < 10:
             tries += 1
-            proxy = get_random_proxy()
+            proxy = get_proxy()
         return proxy
 
     def bad_proxies_gc(self):

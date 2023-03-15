@@ -1,0 +1,4 @@
+dist/
+scrapyproxyport.egg-info/
+.idea
+*.pyc

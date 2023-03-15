@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 here = os.path.abspath(os.path.dirname(__file__))
 
 NAME = 'scrapyproxyport'
-DESCRIPTION = 'Proxy Port integration for Scrapy.'
+DESCRIPTION = 'Proxy Port Scrapy middleware'
 URL = 'https://github.com/proxyport/scrapy-proxyport'
 EMAIL = 'proxyportcom@gmail.com'
 AUTHOR = 'Proxy Port'
@@ -14,7 +14,7 @@ REQUIRES_PYTHON = '>=3.6.0'
 README = ''
 VERSION = ''
 
-REQUIRED = ['proxyport']
+REQUIRED = ['proxyport2']
 
 with open(os.path.join(here, 'README.md')) as f:
     README = f.read()
@@ -41,9 +41,21 @@ setup(
     license='MIT',
     classifiers=[
         'License :: OSI Approved :: MIT License',
+        'Development Status :: 5 - Production/Stable',
+        'Operating System :: OS Independent',
+        'Framework :: Scrapy',
+        'Topic :: Internet :: Proxy Servers',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Information Technology',
+        'Intended Audience :: Science/Research',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy'
     ],
