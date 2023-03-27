@@ -34,7 +34,7 @@ dependencies = ["proxyport2"]
 dynamic = ["version", "readme"]
 
 [project.urls]
-"Homepage" = "https://github.com/proxyport/scrapy-proxyport"
+"Homepage" = "https://proxy-port.com/en/scraping-proxy"
 "Bug Tracker" = "https://github.com/proxyport/scrapy-proxyport/issues"
 
 [tool.setuptools.dynamic]

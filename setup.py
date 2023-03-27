@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 NAME = 'scrapyproxyport'
 DESCRIPTION = 'Proxy Port Scrapy middleware'
-URL = 'https://github.com/proxyport/scrapy-proxyport'
+URL = 'https://proxy-port.com/en/scraping-proxy'
 EMAIL = 'proxyportcom@gmail.com'
 AUTHOR = 'Proxy Port'
 REQUIRES_PYTHON = '>=3.6.0'
